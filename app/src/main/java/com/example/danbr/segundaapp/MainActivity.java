@@ -8,8 +8,7 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText primero;
-    EditText segundo;
+    EditText primero,segundo;
     double a,b,resultado;
 
     @Override
@@ -21,9 +20,6 @@ public class MainActivity extends AppCompatActivity {
         primero=(EditText) findViewById(R.id.A);
         segundo=(EditText) findViewById(R.id.B);
 
-        a= Double.valueOf(primero.getText().toString());
-        b= Double.valueOf(segundo.getText().toString());
-
         final Button s = (Button) findViewById(R.id.suma);
         final Button r = (Button) findViewById(R.id.resta);
         final Button m = (Button) findViewById(R.id.producto);
@@ -32,6 +28,10 @@ public class MainActivity extends AppCompatActivity {
         s.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                a=Double.parseDouble(primero.getText().toString());
+                b=Double.parseDouble(segundo.getText().toString());
+
                 resultado=a+b;
                 s.setText(""+resultado);
                 r.setText("A - B");
@@ -44,6 +44,10 @@ public class MainActivity extends AppCompatActivity {
         r.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                a=Double.parseDouble(primero.getText().toString());
+                b=Double.parseDouble(segundo.getText().toString());
+
                 resultado=a-b;
                 r.setText(""+resultado);
                 s.setText("A + B");
@@ -56,6 +60,10 @@ public class MainActivity extends AppCompatActivity {
         m.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                a=Double.parseDouble(primero.getText().toString());
+                b=Double.parseDouble(segundo.getText().toString());
+
                 resultado=a*b;
                 m.setText(""+resultado);
                 r.setText("A - B");
@@ -66,8 +74,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
         d.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
+
+                a=Double.parseDouble(primero.getText().toString());
+                b=Double.parseDouble(segundo.getText().toString());
+
                 resultado=a/b;
                 d.setText(""+resultado);
                 r.setText("A - B");
